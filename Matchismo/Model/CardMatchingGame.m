@@ -10,6 +10,7 @@
 
 @interface CardMatchingGame()
 @property (nonatomic, readwrite) NSInteger score;
+@property (nonatomic, readwrite) NSString *lastAction;
 @property (nonatomic, strong) NSMutableArray *cards; //ofCards
 @end
 
@@ -34,8 +35,15 @@
                 break;
             }
         }
+        self.score = 0;
+        self.lastAction = @"Click on a card!";
     }
     return self;
+}
+
+- (instancetype)restartWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck {
+    self.cards = nil;
+    return [self initWithCardCount:cardCount usingDeck:deck];
 }
 
 - (Card *)cardAtIndex:(NSUInteger)index {
@@ -49,10 +57,12 @@ static const int COSTTOCHOOSE = 1;
 
 - (void)chooseCardAtIndex:(NSUInteger)index {
     Card *card = [self cardAtIndex:index];
+    self.lastAction = [NSString stringWithFormat:@"You chose %@\nfor %d point penalty.", card.contents, COSTTOCHOOSE];
     
     if (!card.isMatched) {
         if (card.isChosen) {
             card.chosen = NO;
+            self.lastAction = [NSString stringWithFormat:@"You unchose %@\nfor %d point penalty.", card.contents, COSTTOCHOOSE];
         } else {
             //match against other chosen cards
             for (Card *otherCard in self.cards) {
@@ -60,12 +70,15 @@ static const int COSTTOCHOOSE = 1;
                     int matchScore = [card match:@[otherCard]];
                     
                     if (matchScore) {
-                        self.score += matchScore * MATCHBONUS;
+                        int toAdd = matchScore * MATCHBONUS;
+                        self.score += toAdd;
                         card.matched = YES;
                         otherCard.matched = YES;
+                        self.lastAction = [NSString stringWithFormat:@"You matched %@ and %@\nand gained %d points!\nRockin it.", card.contents, otherCard.contents, toAdd];
                     } else {
                         self.score -= MISMATCHPENALTY;
                         otherCard.chosen = NO; //unchoose
+                        self.lastAction = [NSString stringWithFormat:@"You mismatched %@ and %@\nfor %d penalty.\nSad face.", card.contents, otherCard.contents, MISMATCHPENALTY];
                     }
                     break; //bc only choose 2 cards for now
                 }
