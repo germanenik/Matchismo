@@ -19,6 +19,7 @@
 		FC0686F72423639C000EB5F0 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0686F62423639C000EB5F0 /* PlayingCard.m */; };
 		FC0686FA2424AE2E000EB5F0 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0686F92424AE2E000EB5F0 /* Deck.m */; };
 		FC0686FD2424B423000EB5F0 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0686FC2424B423000EB5F0 /* PlayingCardDeck.m */; };
+		FC0687022428296C000EB5F0 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0687012428296C000EB5F0 /* CardMatchingGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		FC0686F92424AE2E000EB5F0 /* Deck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 		FC0686FB2424B423000EB5F0 /* PlayingCardDeck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
 		FC0686FC2424B423000EB5F0 /* PlayingCardDeck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
+		FC0687002428296C000EB5F0 /* CardMatchingGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
+		FC0687012428296C000EB5F0 /* CardMatchingGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 		FC0686F324236075000EB5F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FC0687002428296C000EB5F0 /* CardMatchingGame.h */,
+				FC0687012428296C000EB5F0 /* CardMatchingGame.m */,
 				FC0686F52423639C000EB5F0 /* PlayingCard.h */,
 				FC0686F62423639C000EB5F0 /* PlayingCard.m */,
 				FC0686F024236006000EB5F0 /* Card.h */,
@@ -247,6 +252,7 @@
 				FC0686F72423639C000EB5F0 /* PlayingCard.m in Sources */,
 				FC0686FD2424B423000EB5F0 /* PlayingCardDeck.m in Sources */,
 				FC0686FA2424AE2E000EB5F0 /* Deck.m in Sources */,
+				FC0687022428296C000EB5F0 /* CardMatchingGame.m in Sources */,
 				FC0686F224236006000EB5F0 /* Card.m in Sources */,
 				FC0686D124235051000EB5F0 /* ViewController.m in Sources */,
 				FC0686CB24235051000EB5F0 /* AppDelegate.m in Sources */,

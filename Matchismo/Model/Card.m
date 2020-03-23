@@ -20,7 +20,6 @@
             break;
         }
     }
-    
     return score;
 }
 
