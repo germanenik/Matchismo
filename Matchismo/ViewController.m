@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "PlayingCardDeck.h"
+//#import "PlayingCardDeck.h"
 #import "CardMatchingGame.h"
 
 @interface ViewController ()
@@ -24,8 +24,9 @@
     return _game;
 }
 
-- (PlayingCardDeck *)createDeck {
-    return [[PlayingCardDeck alloc] init];
+- (Deck *)createDeck {
+    //return [[PlayingCardDeck alloc] init];
+    return nil;
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender {
@@ -47,6 +48,7 @@
         [button setTitle:[self titleForCard:card] forState:UIControlStateNormal];
         [button setBackgroundImage:[self backgroundImageForCard: card] forState:UIControlStateNormal];
         [button setEnabled:!card.isMatched]; //diff from his slides
+        [button setAlpha: card.isMatched ? 0.5 : 1.0];
         [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %ld", self.game.score]];
         [self.actionLabel setText:self.game.lastAction];
     }
