@@ -8,11 +8,20 @@
 
 #import "FlipCardViewController.h"
 #import "PlayingCardDeck.h"
+#import "PlayingCardMatchingGame.h"
+
 @interface FlipCardViewController ()
 
 @end
 
 @implementation FlipCardViewController
+
+@synthesize game = _game;
+
+- (CardMatchingGame *)game {
+    if (!_game) _game = [[PlayingCardMatchingGame alloc] initWithCardCount:[self.cardButtons count]  usingDeck:[self createDeck]];
+    return _game;
+}
 
 - (Deck *)createDeck {
     return [[PlayingCardDeck alloc] init];

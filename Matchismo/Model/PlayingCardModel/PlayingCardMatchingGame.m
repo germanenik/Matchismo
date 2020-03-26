@@ -1,68 +1,28 @@
 //
-//  CardMatchingGame.m
+//  PlayingCardMatchingGame.m
 //  Matchismo
 //
-//  Created by German Enik on 3/22/20.
+//  Created by German Enik on 3/25/20.
 //  Copyright © 2020 German's Dope Apps. All rights reserved.
 //
 
-#import "CardMatchingGame.h"
+#import "PlayingCardMatchingGame.h"
 
-@interface CardMatchingGame()
-@property (nonatomic, readwrite) NSInteger score;
-@property (nonatomic, readwrite) NSString *lastAction;
-@property (nonatomic, strong) NSMutableArray *cards; //ofCards
-@end
-
-@implementation CardMatchingGame
-
-//getter for cards
-- (NSMutableArray *)cards {
-    if (!_cards) _cards = [[NSMutableArray alloc] init];
-    return _cards;
-}
-
-//initializer
-- (instancetype)initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck {
-    self = [super init];
-    if (self) {
-        for (int i = 0; i < cardCount; i++){
-            Card *card = [deck drawRandomCard];
-            if (card) { //adding nil would crash the program
-                [self.cards addObject:card];
-            } else {
-                self = nil;
-                break;
-            }
-        }
-        self.score = 0;
-        self.lastAction = @"Click on a card!";
-    }
-    return self;
-}
-
-- (instancetype)restartWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck {
-    self.cards = nil;
-    return [self initWithCardCount:cardCount usingDeck:deck];
-}
-
-- (Card *)cardAtIndex:(NSUInteger)index {
-    return index < [self.cards count] ? self.cards[index] : nil;
-}
+@implementation PlayingCardMatchingGame
 
 static const int MISMATCHPENALTY = 2;
 static const int MATCHBONUS = 4;
 static const int COSTTOCHOOSE = 1;
 
-
 - (void)chooseCardAtIndex:(NSUInteger)index {
     Card *card = [self cardAtIndex:index];
+  
     self.lastAction = [NSString stringWithFormat:@"You chose %@\nfor %d point penalty.", card.contents, COSTTOCHOOSE];
     
     if (!card.isMatched) {
         if (card.isChosen) {
             card.chosen = NO;
-            self.lastAction = [NSString stringWithFormat:@"You unchose %@\nfor %d point penalty.", card.contents, COSTTOCHOOSE];
+            self.lastAction = [NSString stringWithFormat:@"You unchose %@.", card.contents];
         } else {
             //match against other chosen cards
             for (Card *otherCard in self.cards) {
@@ -82,13 +42,17 @@ static const int COSTTOCHOOSE = 1;
                     }
                     break; //bc only choose 2 cards for now
                 }
-                
             }
+            
             self.score -= COSTTOCHOOSE;
             card.chosen = YES;
         }
-        
     }
 }
+
+//- (NSDictionary *)getPoints {
+////    NSLog(@"Calling right method");
+//    return @{@"matchBonus": [NSNumber numberWithInt:4], @"mismatchPenalty": [NSNumber numberWithInt:2], @"costToChoose": [NSNumber numberWithInt:1]};
+//}
 
 @end

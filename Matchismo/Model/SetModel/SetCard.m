@@ -10,10 +10,34 @@
 
 @implementation SetCard
 
+- (int)match:(NSArray *)otherCards {
+    int score = 0;
+    
+    if ([otherCards count] == 2) {
+        for (NSString *feature in [self contentsOfSetCard]) {
+            NSString *value = [self contentsOfSetCard][feature];
+            NSString *value1 = [[otherCards firstObject] contentsOfSetCard][feature];
+            NSString *value2 = [[otherCards lastObject] contentsOfSetCard][feature];
+            
+            BOOL bool1 = [value isEqualToString:value1];
+            BOOL bool2 = [value1 isEqualToString:value2];
+            BOOL bool3 = [value isEqualToString:value2];
+            
+            if (bool1 == bool2 == bool3) {
+                score = 1;
+            } else {
+                score = 0;
+                break;
+            }
+        }
+    }
+    return score;
+}
 
 
-- (NSDictionary *)contents {
-    return @{@"symbol": self.symbol, @"color": self.color, @"count": [NSNumber numberWithUnsignedLong:self.count], @"shade": self.shade};
+//potential bugs
+- (NSDictionary *)contentsOfSetCard {
+    return @{@"symbol": self.symbol, @"color": self.color, @"count": [NSString stringWithFormat:@"%lu", self.count], @"shade": self.shade};
 }
 
 + (NSArray *)validSymbols {
@@ -26,7 +50,7 @@
     return @[@"green", @"red", @"blue"];
 }
 + (NSArray *)validShades {
-    return @[(NSNumber *)@"0.1", (NSNumber *)@"0.6", (NSNumber *)@"1.0"];
+    return @[@"0.1", @"0.6", @"1.0"];
 }
 
 @end

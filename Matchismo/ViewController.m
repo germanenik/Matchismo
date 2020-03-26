@@ -8,13 +8,13 @@
 
 #import "ViewController.h"
 //#import "PlayingCardDeck.h"
-#import "CardMatchingGame.h"
+//#import "CardMatchingGame.h"
 
 @interface ViewController ()
-@property (strong, nonatomic) CardMatchingGame *game;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (weak, nonatomic) IBOutlet UILabel *actionLabel;
+//@property (strong, nonatomic) CardMatchingGame *game;
+//@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+//@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *actionLabel;
 @end
 
 @implementation ViewController
@@ -24,7 +24,7 @@
     return _game;
 }
 
-- (Deck *)createDeck {
+- (Deck *)createDeck { //abstract
     //return [[PlayingCardDeck alloc] init];
     return nil;
 }

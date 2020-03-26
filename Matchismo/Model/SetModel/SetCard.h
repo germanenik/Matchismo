@@ -10,11 +10,16 @@
 
 @interface SetCard : Card
 
+#pragma mark - properties
 @property (strong, nonatomic) NSString *symbol;
 @property (nonatomic) NSUInteger count;
 @property (strong, nonatomic) NSString *color;
-@property (strong, nonatomic) NSNumber *shade;
+@property (strong, nonatomic) NSString *shade;
 
+//#pragma mark - nonstatic methods
+//- (NSDictionary *)contentsOfSetCard;
+
+#pragma mark - static mmethods
 + (NSArray *)validSymbols;
 + (NSUInteger)maxCount;
 + (NSArray *)validColors;
