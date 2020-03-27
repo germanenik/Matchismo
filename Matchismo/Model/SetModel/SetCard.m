@@ -10,6 +10,12 @@
 
 @implementation SetCard
 
+@synthesize contents = _contents;
+
+- (NSString *)contents {
+    return [self description];
+}
+
 - (int)match:(NSArray *)otherCards {
     int score = 0;
     
@@ -23,7 +29,7 @@
             BOOL bool2 = [value1 isEqualToString:value2];
             BOOL bool3 = [value isEqualToString:value2];
             
-            if (bool1 == bool2 == bool3) {
+            if (bool1 == bool2 && bool2 == bool3 && bool1 == bool3) {
                 score = 1;
             } else {
                 score = 0;
@@ -50,7 +56,7 @@
     return @[@"green", @"red", @"blue"];
 }
 + (NSArray *)validShades {
-    return @[@"0.1", @"0.6", @"1.0"];
+    return @[@"0.1", @"0.5", @"1.0"];
 }
 
 @end

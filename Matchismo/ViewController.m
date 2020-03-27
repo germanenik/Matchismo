@@ -42,24 +42,13 @@
 }
 
 - (void)updateUI {
-    for (UIButton *button in self.cardButtons) {
-        NSUInteger cardButtonIndex = [self.cardButtons indexOfObject:button];
-        Card *card = [self.game cardAtIndex:cardButtonIndex];
-        [button setTitle:[self titleForCard:card] forState:UIControlStateNormal];
-        [button setBackgroundImage:[self backgroundImageForCard: card] forState:UIControlStateNormal];
-        [button setEnabled:!card.isMatched]; //diff from his slides
-        [button setAlpha: card.isMatched ? 0.5 : 1.0];
-        [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %ld", self.game.score]];
-        [self.actionLabel setText:self.game.lastAction];
-    }
+    //do something
 }
 
-- (NSString *)titleForCard:(Card *)card {
-    return card.isChosen ? card.contents : @"";
-}
-
-- (UIImage *)backgroundImageForCard:(Card *)card {
-    return [UIImage imageNamed: card.isChosen ? @"cardfront" : @"cardback" ];
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+//    self.game = [_game restartWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+//    [self updateUI];
 }
 
 @end

@@ -16,8 +16,8 @@
 @property (strong, nonatomic) NSString *color;
 @property (strong, nonatomic) NSString *shade;
 
-//#pragma mark - nonstatic methods
-//- (NSDictionary *)contentsOfSetCard;
+#pragma mark - instance methods
+- (NSDictionary *)contentsOfSetCard;
 
 #pragma mark - static mmethods
 + (NSArray *)validSymbols;

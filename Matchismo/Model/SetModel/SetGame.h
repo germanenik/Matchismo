@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SetGame : CardMatchingGame
-
+//due to more complex text formatting, store cost and currCards
+@property (nonatomic) NSString *costPhrase;
+@property (strong, nonatomic) NSArray *currentCards; //of cards
 @end
 
 NS_ASSUME_NONNULL_END

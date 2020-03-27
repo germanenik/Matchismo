@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *actionLabel;
 
+- (void)updateUI;
 - (Deck *)createDeck; //abstract
+//- (NSString *)titleForCard:(Card *)card; //abstract
+//- (UIImage *)backgroundImageForCard:(Card *)card; //abstract
 @end
 
