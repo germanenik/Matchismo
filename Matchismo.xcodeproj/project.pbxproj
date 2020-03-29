@@ -24,6 +24,8 @@
 		FC068708242B0CF7000EB5F0 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC068707242B0CF7000EB5F0 /* SetViewController.m */; };
 		FC06870B242B15F8000EB5F0 /* SetDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = FC06870A242B15F8000EB5F0 /* SetDeck.m */; };
 		FC068710242B1666000EB5F0 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FC06870F242B1666000EB5F0 /* SetCard.m */; };
+		FC068716242BFEAE000EB5F0 /* PlayingCardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = FC068715242BFEAE000EB5F0 /* PlayingCardMatchingGame.m */; };
+		FC068719242C242C000EB5F0 /* SetGame.m in Sources */ = {isa = PBXBuildFile; fileRef = FC068718242C242C000EB5F0 /* SetGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,10 @@
 		FC06870A242B15F8000EB5F0 /* SetDeck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetDeck.m; sourceTree = "<group>"; };
 		FC06870E242B1666000EB5F0 /* SetCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetCard.h; sourceTree = "<group>"; };
 		FC06870F242B1666000EB5F0 /* SetCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetCard.m; sourceTree = "<group>"; };
+		FC068714242BFEAE000EB5F0 /* PlayingCardMatchingGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayingCardMatchingGame.h; sourceTree = "<group>"; };
+		FC068715242BFEAE000EB5F0 /* PlayingCardMatchingGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingCardMatchingGame.m; sourceTree = "<group>"; };
+		FC068717242C242C000EB5F0 /* SetGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetGame.h; sourceTree = "<group>"; };
+		FC068718242C242C000EB5F0 /* SetGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				FC06870C242B1603000EB5F0 /* SetModel */,
-				FC06870D242B161E000EB5F0 /* CardModel */,
+				FC06870D242B161E000EB5F0 /* PlayingCardModel */,
+				FC0687002428296C000EB5F0 /* CardMatchingGame.h */,
+				FC0687012428296C000EB5F0 /* CardMatchingGame.m */,
 				FC0686F024236006000EB5F0 /* Card.h */,
 				FC0686F124236006000EB5F0 /* Card.m */,
 				FC0686F82424AE2E000EB5F0 /* Deck.h */,
@@ -164,6 +172,8 @@
 		FC06870C242B1603000EB5F0 /* SetModel */ = {
 			isa = PBXGroup;
 			children = (
+				FC068717242C242C000EB5F0 /* SetGame.h */,
+				FC068718242C242C000EB5F0 /* SetGame.m */,
 				FC06870E242B1666000EB5F0 /* SetCard.h */,
 				FC06870F242B1666000EB5F0 /* SetCard.m */,
 				FC068709242B15F8000EB5F0 /* SetDeck.h */,
@@ -172,17 +182,17 @@
 			path = SetModel;
 			sourceTree = "<group>";
 		};
-		FC06870D242B161E000EB5F0 /* CardModel */ = {
+		FC06870D242B161E000EB5F0 /* PlayingCardModel */ = {
 			isa = PBXGroup;
 			children = (
-				FC0687002428296C000EB5F0 /* CardMatchingGame.h */,
-				FC0687012428296C000EB5F0 /* CardMatchingGame.m */,
+				FC068714242BFEAE000EB5F0 /* PlayingCardMatchingGame.h */,
+				FC068715242BFEAE000EB5F0 /* PlayingCardMatchingGame.m */,
 				FC0686F52423639C000EB5F0 /* PlayingCard.h */,
 				FC0686F62423639C000EB5F0 /* PlayingCard.m */,
 				FC0686FB2424B423000EB5F0 /* PlayingCardDeck.h */,
 				FC0686FC2424B423000EB5F0 /* PlayingCardDeck.m */,
 			);
-			path = CardModel;
+			path = PlayingCardModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,11 +300,13 @@
 				FC0686FA2424AE2E000EB5F0 /* Deck.m in Sources */,
 				FC0687022428296C000EB5F0 /* CardMatchingGame.m in Sources */,
 				FC0686F224236006000EB5F0 /* Card.m in Sources */,
+				FC068716242BFEAE000EB5F0 /* PlayingCardMatchingGame.m in Sources */,
 				FC0686D124235051000EB5F0 /* ViewController.m in Sources */,
 				FC0686CB24235051000EB5F0 /* AppDelegate.m in Sources */,
 				FC068710242B1666000EB5F0 /* SetCard.m in Sources */,
 				FC0686DC24235053000EB5F0 /* main.m in Sources */,
 				FC068708242B0CF7000EB5F0 /* SetViewController.m in Sources */,
+				FC068719242C242C000EB5F0 /* SetGame.m in Sources */,
 				FC0686CE24235051000EB5F0 /* SceneDelegate.m in Sources */,
 				FC068705242B0CD0000EB5F0 /* FlipCardViewController.m in Sources */,
 				FC06870B242B15F8000EB5F0 /* SetDeck.m in Sources */,
